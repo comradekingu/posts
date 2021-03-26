@@ -1,0 +1,23 @@
+Announcing Weblate
+
+
+After about week of (not so heavy) development, I can announce availability of Weblate - web based translation tool with tight Git integration.
+
+The project was started because I was not happy with existing solutions (see my blog post) as all of them was missing some features I find useful. I started with quite simple definition:
+
+    Minimalistic web based translation with direct commit to git on each translation made. There is no plan in heavy conflict resolution as these should be primarily handled on git side.
+
+Also the project started with defined list of features:
+
+    Easy web based translation
+    Propagation of translations across sub-projects (for different branches)
+    Tight git integration
+    Usage of Django's admin interface
+    Upload and automatic merging of po files
+    Links to source files for context
+
+Pretty much all of that is completed right now, however there will be definitely some issues which will need fixing.
+
+All important information about the project are available on it's website, the code is hosted on Github. If you are curious how it looks, you can try it out on demo server. You can login there with demo account using demo password or register your own user.
+
+Please give it some testing as I plan to deploy it on http://l10n.cihar.com/ pretty soon.
