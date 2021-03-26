@@ -1,33 +1,33 @@
 Announcing Weblate
 
-I still get lot of questions why I wrote Weblate instead of staying with some existing solution. Most of the reasons were already addressed in previous posts, where I looked for Pootle alternative or announced Weblate, but still it might be worth to summarize reasons once more.
+I still get questioned as to why I wrote Weblate instead of staying with an existing solution. Most of this is already addressed in the previous posts, but still it might be worth it to summarize the reasons why once more.
 
 Git integration
 
-None of existing tools integrate with distribute version control, while I find this integration somewhat obvious and necessary. Having translation system as one of remote branches makes things really easy to handle for developers. Merging translations is nothing more than git merge.
+None of existing tools integrate with distributed version control. I find the need for this integration somewhat obvious, and necessary. Having the translation system be one of the remote branches makes things really easy to handle for developers. Merging translations is nothing more than a Git merge away.
 
-Attribution to translator
+Translator attribution
 
-I think it's fair to request that translator gets appropriate attribution for his contribution. Once we rely on Git, it is quite obvious that he will be author for Git commit doing changes. This way you can find author purely with Git and don't need to look for other tools.
+I think it is fair to request translators get appropriate attribution for their contributions. Once we rely on Git, the obvious way to do this is through proper authorship of for Git commits being made. This way authors can be found purely using Git, without needing to look for other tools.
 
-Handling of several branches
+Handling several branches
 
-In phpMyAdmin we heavily use branches to maintain stable releases. On the other side we want to be able to push translations to both stable and testing branches without translators having to do the work twice. Weblate does automatically push changes to all branches. Well this is not limited to branches but to subprojects as they don't have to be only branches, they can be also just related projects like with Gammu and Wammu.
+In phpMyAdmin we heavily use branches to maintain stable releases. We want to be able to push translations to both stable and testing branches, without translators having to do the work twice. Weblate automatically pushes changes to all branches. Sub-projects too, they can even be related projects like with Gammu and Wammu.
 
 Displaying context
 
-Most of tools I tried fail to provide way to show related source code even when Gettext po files contain such references. With Weblate this is just matter of configuring URL of viewer, what nicely integrates with existing services like Github.
+Most of the tools I tried fail to provide a way to show related source code, even when gettext PO files contain such references. With Weblate this is just a matter of setting up a URL for the viewer, integrating nicely with existing services like Github.
 
 Sane merging of uploaded translations
 
-With Pootle, it is possible to upload incomplete po file and it will luckily take it and replace existing one. This is quite dangerous as you would not notice it is incomplete unless you do some translation validation before release. Weblate does merge uploaded translations unit by unit, what makes it slower, but generates minimal diff and works also across branches.
+With Pootle, an incomplete PO file can be uploaded, and it will happily replace the existing one. This is quite dangerous, as you would not notice it is incomplete unless you do some translation validation prior to a release. Weblate merges uploaded translations, unit by unit. It is slower, but generates a minimal diff and also works across branches.
 
 Consistency checks
 
-There are always things which can go easily wrong in the translation like format strings and translation tool should catch these as early as possible. Weblate semi-enforces checks - if check has failed, you will be redirected back to previous translation to possibly correct it (or mark check for ignoring). At current state checks are not as good as I would like to, but they are completely modular and can be easily extended and improved.
+There are always plenty of things to go wrong in translation. The format of the strings and the translation tool employed should catch these as early as possible. Weblate semi-enforces checks — if a check has failed, you will be redirected back to the previous translation to possibly correct it (or mark the check as ignored). At present, state checks are not as good as I would like, but completely modular and easily extended and improved.
 
 Bonus points
 
-While working on Weblate I realized that some things could be done even better than I originally anticipated. For example with Github web hooks, it is possible to receive notifications on upstream repository updates and merge changes as they appear, leaving to really live translation process. Git allows to write custom merge drivers and this can be utilized for less merge conflicts on po files (they are usually caused by timestamps in headers), so that's another handy you get with Weblate.
+While working on Weblate I realized some things could be done even better than originally anticipated. For example, with GitHub webhooks it is possible to receive notifications of upstream repository updates, and merge changes as they appear. This in turn makes for a really live translation process. Git allows writing custom merging drivers, and this can be utilized to get fewer merge conflicts for PO files (usually caused by timestamps in headers), so that's another handy thing you get with Weblate.
 
 Of course there is much more built in, just check the documentation.
